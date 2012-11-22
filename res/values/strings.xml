@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Horoskop</string>
+    <string name="no_signs">No Signs Yet!</string>
+
+    <string-array name="signs">
+        <item>Baran</item>
+        <item>Byk</item>
+        <item>Bliźnięta</item>
+        <item>Rak</item>
+        <item>Lew</item>
+        <item>Panna</item>
+        <item>Waga</item>
+        <item>Skorpion</item>
+        <item>Strzelec</item>
+        <item>Koziorożec</item>
+        <item>Wodnik</item>
+        <item>Ryby</item>
+    </string-array>
+    
+    <string-array name="sign_image_urls">
+        <item>http://i.wp.pl/a/f/png/20033/fioletowy_baran.png</item>
+        <item>http://i.wp.pl/a/f/png/20033/fioletowy_byk.png</item>
+        <item>http://i.wp.pl/a/f/png/20033/fioletowy_bliznieta.png</item>
+        <item>http://i.wp.pl/a/f/png/20033/fioletowy_rak.png</item>
+        <item>http://i.wp.pl/a/f/png/20033/fioletowy_lew.png</item>
+        <item>http://i.wp.pl/a/f/png/20033/fioletowy_panna.png</item>
+        <item>http://i.wp.pl/a/f/png/20033/fioletowy_waga.png</item>
+        <item>http://i.wp.pl/a/f/png/20036/fiolet_skorpion.png</item>
+        <item>http://i.wp.pl/a/f/png/20033/fioletowy_strzelec.png</item>
+        <item>http://i.wp.pl/a/f/png/20033/fioletowy_koziorozec.png</item>
+        <item>http://i.wp.pl/a/f/png/20033/fioletowy_wodnik.png</item>
+        <item>http://i.wp.pl/a/f/png/20033/fioletowy_ryby.png</item>
+    </string-array>
+
+    <string name="refresh_data">Odśwież</string>
+    <string name="image_description">Zodiac sign image.</string>
+
+</resources>
