@@ -19,6 +19,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.annotation.SuppressLint;
 import android.util.Log;
 
 public class Horoscope {
@@ -45,8 +46,8 @@ public class Horoscope {
 	public static Horoscope getInstance() {
 		return HoroscopeHolder.INSTANCE;
 	}
-
-	// Either return HashMap, or only String with appropriate horoscope. TBD
+	
+	@SuppressLint("NewApi") // for some reason Lint treated string in Locale() as pattern for SimpleDateFormat
 	public synchronized HashMap<String, Object> getHoroscopeForDateAndSign(Date date,
 			long sign) {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", new Locale("pl", "pl_PL"));
@@ -120,7 +121,13 @@ public class Horoscope {
 				JSONObject singleSign = jsonHoroscope.getJSONObject(i);
 				tmpHashMap.put(KEY_SIGN, singleSign.getInt(KEY_SIGN));
 				tmpHashMap.put(KEY_DATE, singleSign.getString(KEY_DATE));
-				tmpHashMap.put(KEY_HOROSCOPE, singleSign.getString(KEY_HOROSCOPE));
+				String horoscopeString = singleSign.getString(KEY_HOROSCOPE);
+				int index = horoscopeString.indexOf("<br");
+				if (index > 0) {
+					tmpHashMap.put(KEY_HOROSCOPE, horoscopeString.substring(0, index));
+				} else {
+					tmpHashMap.put(KEY_HOROSCOPE, singleSign.get(KEY_HOROSCOPE));
+				}
 				horoscope.add(tmpHashMap);
 			}
 		} catch (JSONException e) {
